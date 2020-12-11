@@ -33,6 +33,7 @@ namespace Lets_Date
                 option.UseSqlServer(_config.GetConnectionString("DefaultConnection"));
             });
             services.AddControllers();
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +47,8 @@ namespace Lets_Date
             app.UseHttpsRedirection(); // for redirecting to http end point
 
             app.UseRouting(); // for allowing browser to show data through controller
+
+            app.UseCors(poilicy=> poilicy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200")); // For allowing CORS Policiy
 
             app.UseAuthorization(); 
 
