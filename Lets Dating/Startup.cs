@@ -48,7 +48,7 @@ namespace Lets_Date
 
             app.UseRouting(); // for allowing browser to show data through controller
 
-            app.UseCors(poilicy=> poilicy.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200")); // For allowing CORS Policiy
+            app.UseCors(poilicy=> poilicy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200")); // For allowing CORS Policiy
 
             app.UseAuthorization(); 
 
